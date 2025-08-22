@@ -1,0 +1,13 @@
+{{ $sass := resources.Get "scss/style.scss" | toCSS (dict "targetPath"
+"css/style.css" "enableSourceMap" true) }} {{- with cond hugo.IsProduction
+($sass | minify | fingerprint) $sass }} {{- if eq hugo.Environment "development"
+}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />
+{{- else }} {{- with . | minify | fingerprint }}
+<link
+  rel="stylesheet"
+  href="{{ .RelPermalink }}"
+  integrity="{{ .Data.Integrity }}"
+  crossorigin="anonymous"
+/>
+{{- end }} {{- end }} {{- end }}
