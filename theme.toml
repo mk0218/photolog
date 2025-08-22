@@ -1,7 +1,7 @@
 name = 'Photolog'
 license = 'MIT'
 licenselink = 'https://github.com/mk0218/photolog/blob/main/LICENSE'
-description = 'Photolog is a Hugo theme for photo blogs and galleries, focused on posts made of photos with minimal text. Supports photo tags and post categories.'
+description = 'Photolog is a Hugo theme for photographers.'
 
 homepage = 'https://github.com/mk0218/photolog'
 
