@@ -6,15 +6,15 @@
       <a href="{{ .RelPermalink }}">
         <h1 class="page-title">{{ .Title }}</h1>
       </a>
+      {{ with .Description }}
+        <p class="page-description">{{ . }}</p>
+      {{ end }}
       {{ with .Params.categories }}
         <p class="page-categories">
           {{ range . }}
             {{ partial "components/tag.html" . }}
           {{ end }}
         </p>
-      {{ end }}
-      {{ with .Description }}
-        <p class="page-description">{{ . }}</p>
       {{ end }}
       {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
       {{ $dateHuman := .Date | time.Format ":date_long" }}

@@ -154,18 +154,18 @@ body {
 
 .page-title {
   color: $foreground;
-  margin: 1rem 0 0.5rem;
+  margin: 1rem 0 0;
   font-size: 2rem;
 }
 
-.page-categories {
-  margin: 0;
-}
-
 .page-description {
-  margin: 0.5rem 0;
+  margin: 0.2rem 0 0.6rem;
   color: $foreground;
   font-size: 1.2rem
+}
+
+.page-categories {
+  margin: 0 0 0.5rem;
 }
 
 .profile-img {
@@ -201,7 +201,7 @@ body {
   background-color: $primary;
   color: white;
   border-radius: 6px;
-  padding: 0.2rem 0.6rem;
+  padding: 0.1rem 0.6rem 0.2rem;
 
   &:hover {
     background-color: $primary-dark;
