@@ -1,0 +1,31 @@
+.sidebar-left {
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1rem 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.sidebar-right {
+  width: 300px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  box-sizing: border-box;
+  padding: 1.5rem 1rem 1rem 2rem;
+  flex-direction: column;
+}
+
+.main-content {
+  margin-left: 200px; /* Adjust based on sidebar width */
+  margin-right: 300px; /* Adjust based on sidebar width */
+  min-height: 100vh;
+  padding-top: 1.5rem;
+}

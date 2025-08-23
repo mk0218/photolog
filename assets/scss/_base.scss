@@ -1,0 +1,12 @@
+@import "variables";
+
+body {
+  background-color: $background;
+  color: $foreground;
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  height: 100vh;
+  overflow-y: auto;
+  font-family: "Noto Sans KR";
+}
