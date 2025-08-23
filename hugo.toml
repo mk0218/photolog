@@ -1,9 +1,9 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-US'
-title = 'My New Hugo Site'
+title = 'Photolog'
 
 [[menus.main]]
-name = 'Home'
+name = 'Gallery'
 pageRef = '/'
 weight = 10
 
@@ -13,11 +13,17 @@ pageRef = '/posts'
 weight = 20
 
 [[menus.main]]
-name = 'Tags'
-pageRef = '/tags'
+name = 'About'
+pageRef = '/about'
 weight = 30
 
 [module]
   [module.hugoVersion]
     extended = false
     min = "0.116.0"
+
+[params]
+  [params.sidebar]
+    [params.sidebar.profile]
+      enabled = true
+      src = "img/profile.jpg"

@@ -1,0 +1,16 @@
+{{ with .Site.Params.sidebar.profile }}
+  {{ if .enabled }}
+    {{ with resources.Get (.src) }}
+    <figure class="profile">
+      <img
+        src="{{ .RelPermalink }}"
+        alt="Profile Image"
+        width="120"
+        class="profile-img"
+      />
+    </figure>
+    {{ end }}
+  {{ end }}
+{{ end }}
+<h1 class="site-title"><a href="{{ .Site.BaseURL | relLangURL }}">{{ site.Title }}</a></h1>
+{{ partial "menu.html" (dict "menuID" "main" "page" .) }}

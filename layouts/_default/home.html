@@ -1,7 +1,17 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+  <div class="gallery">
+    {{ range site.RegularPages }}
+      {{ $page := . }}
+      {{ range .Resources.ByType "image" }}
+        <a href="{{ page.RelPermalink }}">
+          <img
+            class="thumbnail"
+            src="{{ .RelPermalink }}"
+            alt="{{ .Title }}"
+            width="300"
+          />
+        </a>
+      {{ end }}
+    {{ end }}
+  </div>
 {{ end }}
