@@ -3,7 +3,7 @@
     {{ range site.RegularPages }}
       {{ $page := . }}
       {{ range .Resources.ByType "image" }}
-        <a href="{{ page.RelPermalink }}">
+        <a href="{{ $page.RelPermalink }}/#{{ .RelPermalink | urlize }}">
           <img
             class="thumbnail"
             src="{{ .RelPermalink }}"

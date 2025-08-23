@@ -36,6 +36,8 @@ body {
   right: 0;
   bottom: 0;
   display: flex;
+  box-sizing: border-box;
+  padding: 1.5rem 1rem 1rem 1.5rem;
   flex-direction: column;
   background-color: bisque;
 }

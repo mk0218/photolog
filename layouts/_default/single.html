@@ -10,6 +10,7 @@
 
     {{ .Content }}
     {{- range .Resources.ByType "image" -}}
+      <a id="{{ .RelPermalink | urlize }}"></a>
       <figure>
         <img
           class="img-post"
