@@ -1,5 +1,8 @@
+@import "variables";
+
 body {
-  color: #222;
+  background-color: $background;
+  color: $foreground;
   font-family: sans-serif;
   line-height: 1.5;
   margin: 0;
@@ -15,7 +18,6 @@ body {
   bottom: 0;
   display: flex;
   flex-direction: column;
-  background-color: bisque;
   box-sizing: border-box;
   padding: 1rem 1.5rem 1rem 0.5rem;
   padding-top: 1.5rem;
@@ -26,7 +28,6 @@ body {
   margin-right: 300px; /* Adjust based on sidebar width */
   min-height: 100vh;
   padding-top: 1.5rem;
-  background-color: #f0f0f0;
 }
 
 .sidebar-right {
@@ -37,9 +38,8 @@ body {
   bottom: 0;
   display: flex;
   box-sizing: border-box;
-  padding: 1.5rem 1rem 1rem 1.5rem;
+  padding: 1.5rem 1rem 1rem 2rem;
   flex-direction: column;
-  background-color: bisque;
 }
 
 .img-post {
@@ -66,6 +66,11 @@ body {
 .site-title {
   font-size: 1.2rem;
   margin: 0.5rem 0 0 1rem;
+  color: $primary;
+
+  &:hover {
+    color: $primary-dark;
+  }
 }
 
 .gallery {
