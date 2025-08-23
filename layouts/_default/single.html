@@ -1,8 +1,18 @@
 {{ define "main" }}
+{{ $page := . }}
   <div class="post">
     <header>
       <!-- TODO: breadcrumb -->
-      <a href="{{ .RelPermalink }}"><h1 class="page-title">{{ .Title }}</h1></a>
+      <a href="{{ .RelPermalink }}">
+        <h1 class="page-title">{{ .Title }}</h1>
+      </a>
+      {{ with .Params.categories }}
+        <p class="page-categories">
+          {{ range . }}
+            {{ partial "components/tag.html" . }}
+          {{ end }}
+        </p>
+      {{ end }}
       {{ with .Description }}
         <p class="page-description">{{ . }}</p>
       {{ end }}

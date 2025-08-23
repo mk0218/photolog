@@ -1,2 +1,9 @@
 <h2>Categories</h2>
+<p class="categories">
+  {{ with .Site.Taxonomies.categories }}
+    {{ range $name, $taxonomy := . }}
+      {{ partial "components/tag.html" $name }}
+    {{ end }}
+  {{ end }}
+</p>
 <h2>Tags</h2>
