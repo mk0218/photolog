@@ -83,6 +83,23 @@ body {
   max-width: 720px;
   margin: 0 auto;
   padding-top: 1rem;
+
+  header {
+    border: none;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.page-title {
+  color: $foreground;
+  margin: 1rem 0 0.5rem;
+  font-size: 2rem;
+}
+
+.page-description {
+  margin: 0.5rem 0;
+  color: $foreground;
+  font-size: 1.2rem
 }
 
 .profile-img {
