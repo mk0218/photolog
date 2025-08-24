@@ -2,12 +2,15 @@
   {{ if .enabled }}
     {{ with resources.Get (.src) }}
     <figure class="profile">
-      <img
-        src="{{ .RelPermalink }}"
-        alt="Profile Image"
-        width="120"
-        class="profile-img"
-      />
+      {{ with .Resize "120x" }}
+        <img
+          src="{{ .RelPermalink }}"
+          alt="Profile Image"
+          width="{{ .Width }}"
+          class="profile-img"
+          loading="lazy"
+        />
+      {{ end }}
     </figure>
     {{ end }}
   {{ end }}

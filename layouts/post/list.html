@@ -1,0 +1,45 @@
+{{ define "main" }}
+  <div class="post">
+    <header>
+      <!-- TODO: breadcrumb -->
+      <a href="{{ .RelPermalink }}">
+        <h1 class="page-title">{{ .Title }}</h1>
+      </a>
+      {{ with .Description }}
+        <p class="page-description">{{ . }}</p>
+      {{ end }}
+      {{ with .Params.categories }}
+      <p class="page-categories">
+          {{ range . }}
+          {{ partial "components/category.html" . }}
+          {{ end }}
+      </p>
+      {{ end }}
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format "2006-01-02" }}
+      <time datetime="{{ $dateMachine }}">Uploaded: {{ $dateHuman }}</time>
+    </header>
+
+    {{ range .Pages }}
+      {{ $page := . }}
+      {{ with .Resources.ByType "image" }}
+        {{ if gt (len .) 0 }}
+          {{ with index . 0 }}
+            <figure>
+              <a href="{{ $page.RelPermalink }}">
+                <img
+                  class="img-post"
+                  src="{{ .RelPermalink }}"
+                  alt="{{ .Name }}"
+                  width="{{ .Width }}"
+                  height="{{ .Height }}"
+                />
+              </a>
+            {{ end }}
+          </figure>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{ .Content }}
+  </div>
+{{ end }}

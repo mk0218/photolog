@@ -1,5 +1,4 @@
 {{ define "main" }}
-{{ $page := . }}
   <div class="post">
     <header>
       <!-- TODO: breadcrumb -->
@@ -9,21 +8,9 @@
       {{ with .Description }}
         <p class="page-description">{{ . }}</p>
       {{ end }}
-      {{ with .Params.categories }}
-        <p class="page-categories">
-          {{ range . }}
-            {{ partial "components/tag.html" . }}
-          {{ end }}
-        </p>
-      {{ end }}
-      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-      {{ $dateHuman := .Date | time.Format ":date_long" }}
-      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
     </header>
 
-    {{ .Content }}
-    {{- range .Resources.ByType "image" -}}
-      <a id="{{ .RelPermalink | urlize }}"></a>
+    {{ range .Resources.ByType "image" }}
       <figure>
         <img
           class="img-post"
@@ -32,9 +19,15 @@
           width="{{ .Width }}"
           height="{{ .Height }}"
         />
-        <figcaption>{{ .Title }}</figcaption>
       </figure>
-    {{- end -}}
-    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    {{ end }}
+    {{ .Content }}
+    {{ with .Params.tags }}
+      <p class="page-tags">
+        {{ range . }}
+          {{ partial "components/tag.html" . }}
+        {{ end }}
+      </p>
+    {{ end }}
   </div>
 {{ end }}
